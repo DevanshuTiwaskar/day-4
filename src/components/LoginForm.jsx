@@ -36,7 +36,7 @@ const LoginForm = () => {
         <h1 className="font-bold">Login</h1>
         <input
           {...register("email", { required: true })}
-          className="border-2 p-3 rounded placeholder-black dark:placeholder-white"
+          className="border-2 p-3 rounded"
           type="text"
           placeholder="Email"
         />
@@ -44,7 +44,7 @@ const LoginForm = () => {
 
         <input
           {...register("password", { required: true })}
-          className="border-2 p-3 rounded placeholder-black dark:placeholder-white"
+          className="border-2 p-3 rounded"
           type="text"
           placeholder="Password"
         />
