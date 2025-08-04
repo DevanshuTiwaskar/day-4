@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import RegisterForm from "./components/RegisterForm";
 import LoginForm from "./components/LoginForm";
-import { MyStore } from "./comtext/Context";
+import { MyStore } from "./Context/Context";
 
 function App() {
   const { formData, toggle, isDark, toggleTheme } = useContext(MyStore);
@@ -17,7 +17,6 @@ function App() {
           className="px-4 py-2 mb-2 border rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition"
         >
           {isDark === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
-
         </button>
       </div>
 

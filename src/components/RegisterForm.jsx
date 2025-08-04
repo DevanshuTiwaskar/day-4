@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { MyStore } from "../comtext/Context";
+import { MyStore } from "../Context/Context";
 
 const RegisterForm = () => {
   let { setToggle, formData, setFormData } = useContext(MyStore);

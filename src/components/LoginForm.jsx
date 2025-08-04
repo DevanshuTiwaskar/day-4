@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { MyStore } from "../comtext/Context";
+import { MyStore } from "../Context/Context";
 
 const LoginForm = () => {
-
-let { setToggle,formData} = useContext(MyStore)
-
+  let { setToggle, formData } = useContext(MyStore);
 
   const {
     register,
@@ -21,11 +19,9 @@ let { setToggle,formData} = useContext(MyStore)
     );
 
     if (userExists) {
-        toast.success("You're in! ");
-
+      toast.success("You're in! ");
     } else {
-        toast.error("Hey there! Create an account to get started.");
-
+      toast.error("Hey there! Create an account to get started.");
     }
 
     reset();
