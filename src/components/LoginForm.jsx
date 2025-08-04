@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { MyStore } from "../comtext/Context";
 
-const LoginForm = ({ setToggle, formData }) => {
+const LoginForm = () => {
+
+let { setToggle,formData} = useContext(MyStore)
+
+
   const {
     register,
     handleSubmit,
@@ -16,9 +21,10 @@ const LoginForm = ({ setToggle, formData }) => {
     );
 
     if (userExists) {
-        toast.success("success fully login")
+        toast.success("You're in! ");
+
     } else {
-        toast.error("register first")
+        toast.error("Hey there! Create an account to get started.");
 
     }
 
@@ -29,12 +35,12 @@ const LoginForm = ({ setToggle, formData }) => {
     <div className="flex flex-col gap-3 items-center">
       <form
         onSubmit={handleSubmit(loginUser)}
-        className="flex flex-col gap-2 text-center w-[40%]"
+        className="flex flex-col gap-2 text-center sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[30%]"
       >
         <h1 className="font-bold">Login</h1>
         <input
           {...register("email", { required: true })}
-          className="border-2 p-3 rounded"
+          className="border-2 p-3 rounded placeholder-black dark:placeholder-white"
           type="text"
           placeholder="Email"
         />
@@ -42,7 +48,7 @@ const LoginForm = ({ setToggle, formData }) => {
 
         <input
           {...register("password", { required: true })}
-          className="border-2 p-3 rounded"
+          className="border-2 p-3 rounded placeholder-black dark:placeholder-white"
           type="text"
           placeholder="Password"
         />
